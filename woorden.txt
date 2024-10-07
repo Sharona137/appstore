@@ -1,0 +1,12 @@
+easy:hond
+easy:kat
+easy:muis
+easy:duif
+easy:kaas
+easy:dier
+medium:pompoen
+medium:olifant
+medium:computer
+hard:bibliotheek
+hard:ziekenhuis
+hard:psychologie
