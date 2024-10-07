@@ -44,7 +44,6 @@ def spel_spelen(woord, max_pogingen):
 
 def spel_beginnen():
     print("Welkom bij galgje")
-    gebruiker = input("Wat is je naam?: ")
 
     woorden_lijst = woordenbestand("woorden.txt")
 

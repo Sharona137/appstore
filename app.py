@@ -3,8 +3,10 @@ from galgje import spel_beginnen
 
 def menu():
     while True:
-        print('\nWelkom bij VS-Store.'
-              '\nIn deze appstore kan je kiezen welke spelletjes je wilt spelen.'
+        print('\nWelkom bij VS-Store')
+        gebruiker = input('Wat is je naam?: ')
+        print('\nHoi', gebruiker)
+        print('In deze appstore kan je kiezen welke spelletjes je wilt spelen.'
               '\nDe keuzes zijn:'
               '\n1: Nummerraadspel'
               '\n2: Galgje'
@@ -21,7 +23,7 @@ def menu():
 
 
         elif keuze == '3':
-            print('Tot de volgende keer')
+            print('Tot de volgende keer', gebruiker)
             break
 
 
