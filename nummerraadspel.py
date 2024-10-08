@@ -1,5 +1,8 @@
 import random
 
+blue = "\033[34m"
+
+
 def raadspel():
 
     #Het getal dat geraden moet worden moet tussen de 1 en 15 zijn
@@ -8,7 +11,7 @@ def raadspel():
     #De gebruiker heeft 5 pogingen om het getal te raden
     max_poging = 5
 
-    print(f"Hoi, welkom bij het nummerraad spel! Je mag een getal tussen de 1 en 15 raden.")
+    print(f"{blue}Hoi, welkom bij het nummerraad spel! Je mag een getal tussen de 1 en 15 raden.")
     print(f"Je hebt {max_poging} pogingen om het nummer te raden, succes!")
 
     #Deze code geeft aan dat bij elke poging, 1 poging erbij word geteld totdat er 6 pogingen zijn gedaan
@@ -28,6 +31,7 @@ def raadspel():
             print(f"Toppie! Je hebt het getal {rand_num} geraden!")
             #break geeft aan dat de gehele code hier stopt, omdat het getal is geraden
             break
+
     else:
         #Hier geeft de code aan dat het getal niet is geraden en wat het getal was dat geraden moest geworden
         print(f"Helaas, je hebt al je pogingen gebruikt en je hebt het getal niet kunnen raden.")

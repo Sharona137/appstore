@@ -1,9 +1,12 @@
 import random
 
+yellow = "\033[93m"
+
 def woordenbestand(file):
     with open(file, 'r') as infile:
         woorden = infile.readlines()
     woorden_lijst = {'easy': [], 'medium': [], 'hard': []}
+
     for line in woorden:
         moeilijkheid, woord = line.strip().split(":")
         woorden_lijst[moeilijkheid].append(woord)
@@ -44,11 +47,10 @@ def spel_spelen(woord, max_pogingen):
 
 
 def spel_beginnen():
-    print("Welkom bij galgje")
-
+    print(f"{yellow}Welkom bij galgje")
     woorden_lijst = woordenbestand("woorden.txt")
-
     moeilijkheid = input("Kies een moeilijkheidsgraad (easy, medium, hard): ").lower()
+
     while moeilijkheid not in woorden_lijst:
         moeilijkheid = input("Ongeldige keuze. Kies easy, medium of hard: ").lower()
 
