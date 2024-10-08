@@ -7,6 +7,7 @@ red = "\33[91m"
 yellow = "\033[93m"
 pinkt_background = "\033[45m"
 
+
 def menu():
     print(f"{red}\nWelkom bij VS-Store")
     gebruiker = input(f"Wat is je naam?: ")
