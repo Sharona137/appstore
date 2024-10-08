@@ -33,6 +33,7 @@ def raadspel():
         print(f"Helaas, je hebt al je pogingen gebruikt en je hebt het getal niet kunnen raden.")
         print(f"Het juiste getal was {rand_num}.")
 
-    print(f"Bedankt voor het spelen, je gaat nu terug naar het menu :)")
+    input(f"Bedankt voor het spelen :)"
+          f"\nDruk op 'Enter' om terug naar het menu te gaan")
 
     return None

@@ -35,7 +35,8 @@ def spel_spelen(woord, max_pogingen):
             print(f"De letter {poging} is fout, je hebt nog {pogingen_over} pogingen over")
         if woord_compleet == woord:
             print(f"Yes, je hebt het woord '{woord}' geraden")
-            print(f"Bedankt voor het spelen, je gaat nu terug naar het menu :)")
+            input(f"Bedankt voor het spelen :)"
+                  f"\nDruk op 'Enter' om terug naar het menu te gaan")
             return True, max_pogingen - pogingen_over
 
     print(f"Helaas, je hebt geen pogingen meer. Het woord was: {woord}")
