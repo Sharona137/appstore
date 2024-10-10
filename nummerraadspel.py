@@ -6,12 +6,12 @@ blue = "\033[34m"
 def raadspel():
 
     # Het getal dat geraden moet worden moet tussen de 1 en 15 zijn
-    rand_num = random.randint(1, 15)
+    rand_num = random.randint(1, 20)
 
     # De gebruiker heeft 5 pogingen om het getal te raden
     max_poging = 5
 
-    print(f"{blue}Hoi, welkom bij het nummerraadspel! Je mag een getal tussen de 1 en 15 raden.")
+    print(f"{blue}Hoi, welkom bij het nummerraadspel! Je mag een getal tussen de 1 en 20 raden.")
     print(f"Je hebt {max_poging} pogingen om het nummer te raden, succes!")
 
     for poging in range(max_poging):
@@ -20,8 +20,8 @@ def raadspel():
             gok = int(input(f"Raad het nummer (poging {poging + 1}): "))
 
             # Controleer of de invoer binnen het juiste bereik valt
-            if gok < 1 or gok > 15:
-                print("Voer alsjeblieft een getal tussen de 1 en 15 in.")
+            if gok < 1 or gok > 20:
+                print("Voer alsjeblieft een getal tussen de 1 en 20 in.")
                 continue  # Ga verder met de volgende poging als de invoer ongeldig is
 
         except ValueError:
