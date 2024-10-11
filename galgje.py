@@ -55,7 +55,7 @@ def spel_beginnen():
         moeilijkheid = input("Ongeldige keuze. Kies easy, medium of hard: ").lower()
 
     woord = kies_woord(woorden_lijst, moeilijkheid)
-    max_pogingen = len(woord) + 3
+    max_pogingen = len(woord) + 2
     spel_spelen(woord, max_pogingen)
 
 
