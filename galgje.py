@@ -36,11 +36,11 @@ def spel_spelen(woord, max_pogingen):
         elif poging in woord:
             geraden_letters.append(poging)
             woord_compleet = "".join([letter if letter in geraden_letters else "_" for letter in woord])
-            print(f"{green}Correct{reset}, de letter {green} {poging} {reset} zit in het woord -> {yellow} {woord_compleet} {reset}")
+            print(f"{green}Correct{reset}, de letter {green}{poging}{reset} zit in het woord -> {yellow} {woord_compleet} {reset}")
         else:
             geraden_letters.append(poging)
             pogingen_over -= 1
-            print(f"De letter {red} {poging} is fout {reset}, je hebt nog {pogingen_over} pogingen over")
+            print(f"De letter {red} {poging} is fout {reset}, je hebt nog {red}{pogingen_over} pogingen over{reset}")
         if woord_compleet == woord:
             print(f"Yes, je hebt het woord {yellow}'{woord}'{reset} geraden")
             return True, max_pogingen - pogingen_over
@@ -52,13 +52,13 @@ def spel_spelen(woord, max_pogingen):
 def spel_beginnen():
     print(f"\n{reset}Welkom bij {yellow}galgje{reset}")
     woorden_lijst = woordenbestand("woorden.txt")
-    moeilijkheid = input(f"Kies een moeilijkheidsgraad {grey}(1: easy, 2: medium, 3: hard): {reset}").lower()
+    moeilijkheid = input(f"Type hier de moeilijkheidsgraad die je wilt{grey}(easy, medium, hard): {reset}").lower()
 
     while moeilijkheid not in woorden_lijst:
         moeilijkheid = input("Ongeldige keuze. Kies easy, medium of hard: ").lower()
 
     woord = kies_woord(woorden_lijst, moeilijkheid)
-    max_pogingen = len(woord) + 2
+    max_pogingen = len(woord) + 3
     spel_spelen(woord, max_pogingen)
 
     input(f"\nBedankt voor het spelen :)\nDruk op {pink}'Enter'{reset} om terug naar het menu te gaan.")

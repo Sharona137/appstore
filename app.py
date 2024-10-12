@@ -11,10 +11,10 @@ reset = "\033[0m"
 
 
 def menu():
-    print(f"\nWelkom bij VS-Store")
+    print(f"\nWelkom bij {blue}VS-Store{reset}")
     gebruiker = input(f"Wat is je naam?: ")
     while True:
-        print(f"\nHoi, {red}", gebruiker)
+        print(f"\nHoi,{red}",gebruiker)
         print(f"{reset}In deze appstore kan je kiezen welke spelletjes je wilt spelen."
               "\nDe keuzes zijn:"
               f"\n{pink}1: Nummerraadspel"
