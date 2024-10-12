@@ -6,18 +6,20 @@ blue = "\033[34m"
 red = "\33[91m"
 yellow = "\033[93m"
 pinkt_background = "\033[45m"
+green = "\033[92m"
+reset = "\033[0m"
 
 
 def menu():
-    print(f"{red}\nWelkom bij VS-Store")
+    print(f"\nWelkom bij VS-Store")
     gebruiker = input(f"Wat is je naam?: ")
     while True:
-        print(f"{pink}\nHoi", gebruiker)
-        print('In deze appstore kan je kiezen welke spelletjes je wilt spelen.'
-              '\nDe keuzes zijn:'
-              '\n1: Nummerraadspel'
-              '\n2: Galgje'
-              '\n3: Afsluiten')
+        print(f"\nHoi, {red}", gebruiker)
+        print(f"{reset}In deze appstore kan je kiezen welke spelletjes je wilt spelen."
+              "\nDe keuzes zijn:"
+              f"\n{pink}1: Nummerraadspel"
+              "\n2: Galgje"
+              f"\n3: Afsluiten{reset}")
 
         keuze = input('Kies je keuze (1, 2 of 3): ')
         if keuze == '1':
@@ -29,7 +31,7 @@ def menu():
             continue
 
         elif keuze == '3':
-            print('Tot de volgende keer', gebruiker)
+            print(f"\n{reset}Tot de volgende keer {red}{gebruiker}{reset}, fijne dag verder :)")
             break
 
         else:
