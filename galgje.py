@@ -49,7 +49,7 @@ def spel_spelen(woord, max_pogingen):
 def spel_beginnen():
     print(f"{yellow}Welkom bij galgje")
     woorden_lijst = woordenbestand("woorden.txt")
-    moeilijkheid = input("Kies een moeilijkheidsgraad (easy, medium, hard): ").lower()
+    moeilijkheid = input("Kies een moeilijkheidsgraad (1: easy, 2: medium, 3: hard): ").lower()
 
     while moeilijkheid not in woorden_lijst:
         moeilijkheid = input("Ongeldige keuze. Kies easy, medium of hard: ").lower()
@@ -58,4 +58,5 @@ def spel_beginnen():
     max_pogingen = len(woord) + 2
     spel_spelen(woord, max_pogingen)
 
+    input("Bedankt voor het spelen :)\nDruk op 'Enter' om terug naar het menu te gaan.")
 
