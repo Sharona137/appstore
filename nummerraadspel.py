@@ -1,5 +1,6 @@
 import random
 
+# Kleurtjes om mijn code aantrekkelijker te maken
 blue = "\033[34m"
 reset = "\033[0m"
 red = "\33[91m"
@@ -7,30 +8,27 @@ pink = "\033[95m"
 green = "\033[92m"
 
 def raadspel():
-
-    # Het getal dat geraden moet worden moet tussen de 1 en 15 zijn
-    rand_num = random.randint(1, 20)
-
-    # De gebruiker heeft 5 pogingen om het getal te raden
+    rand_num = random.randint(1, 20)  # Er wordt een random nummer tussen de 1 en 20 gekozen
     max_poging = 5
-
     print(f"\nWelkom bij het {blue}nummerraadspel{reset}, je mag een getal tussen de 1 en 20 raden.")
     print(f"Je hebt {blue}{max_poging} pogingen{reset} om het nummer te raden, succes!")
 
-    for poging in range(max_poging):
-        try:
-            # Probeer de invoer om te zetten naar een integer
-            gok = int(input(f"Raad het nummer {blue}(poging {poging + 1}){reset}: "))
+    poging = 0  # Houdt het aantal gebruikte pogingen bij
 
-            # Controleer of de invoer binnen het juiste bereik valt
-            if gok < 1 or gok > 20:
-                print("Voer alsjeblieft een getal tussen de 1 en 20 in.")
-                continue  # Ga verder met de volgende poging als de invoer ongeldig is
+    while poging < max_poging:
+        gok = input(f"Raad het nummer {blue}(poging {poging + 1}){reset}: ")
 
-        except ValueError:
-            # Als de invoer geen integer is, geef een foutmelding
-            print(f"Ongeldige poging, geef alsjeblieft een nummer in.")
-            continue  # Ga verder met de volgende poging
+        if not gok.isdigit():  # Controleer of de invoer een cijfer is
+            print(f"Voer alsjeblieft een {pink}cijfer{reset} in, geen {red}letter{reset}")  # Foutmelding voor geen cijfer
+            continue
+
+        gok = int(gok)  # Invoer moet een cijfer zijn
+
+        if gok < 1 or gok > 20:
+            print("Voer alsjeblieft een getal tussen de 1 en 20 in.")
+            continue
+
+        poging += 1  # Er komt een poging bij totdat de maximale pogingen zijn bereikt
 
         # Check of de gok te hoog of te laag is
         if gok > rand_num:
@@ -42,10 +40,9 @@ def raadspel():
             print(f"{green}Toppie! Je hebt het getal {rand_num} geraden!{reset}")
             break
     else:
-        # Als de speler al zijn pogingen heeft gebruikt zonder het juiste getal te raden
-        print(f"Helaas, je hebt al je pogingen gebruikt en het juiste getal niet kunnen raden.")
-        print(f"Het juiste getal was {rand_num}.")
+        # Alle pogingen zijn gebruikt
+        print(f"{red}Helaas, je hebt al je pogingen gebruikt en het juiste getal niet kunnen raden.{reset}")
+        print(f"Het juiste getal was {blue}{rand_num}{reset}.")
 
     input(f"\nBedankt voor het spelen :)\nDruk op {pink}'Enter'{reset} om terug naar het menu te gaan.")
 
-    return None

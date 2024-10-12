@@ -1,6 +1,8 @@
+# Het nummerraadspel en galgje importeren
 from nummerraadspel import raadspel
 from galgje import spel_beginnen
 
+# Kleurtjes om mijn appstore aantrekkelijker te maken
 pink = "\033[95m"
 blue = "\033[34m"
 red = "\33[91m"
@@ -14,7 +16,7 @@ def menu():
     print(f"\nWelkom bij {blue}VS-Store{reset}")
     gebruiker = input(f"Wat is je naam?: ")
     while True:
-        print(f"\nHoi,{red}",gebruiker)
+        print(f"\nHoi,{pink}",gebruiker)
         print(f"{reset}In deze appstore kan je kiezen welke spelletjes je wilt spelen."
               "\nDe keuzes zijn:"
               f"\n{pink}1: Nummerraadspel"
@@ -23,18 +25,18 @@ def menu():
 
         keuze = input('Kies je keuze (1, 2 of 3): ')
         if keuze == '1':
-            raadspel()
+            raadspel() # Het nummerraadspel bestand wordt geopend
             continue
 
         elif keuze == '2':
-            spel_beginnen()
+            spel_beginnen() # Galgje bestand wordt geopend
             continue
 
         elif keuze == '3':
-            print(f"\n{reset}Tot de volgende keer {red}{gebruiker}{reset}, fijne dag verder :)")
+            print(f"\n{reset}Tot de volgende keer {pink}{gebruiker}{reset}, fijne dag verder :)")
             break
 
-        else:
+        else: # Een keuze anders dan 1, 2 of 3
             print('Dit is een ongeldige optie, kies alsjeblieft keuze 1, 2 of 3')
             continue
 
